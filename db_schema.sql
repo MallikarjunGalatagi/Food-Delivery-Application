@@ -191,12 +191,12 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 
 -- 1. Insert Admins
 INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone`, `role`, `status`) VALUES
-(1, 'admin@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Super', 'Admin', '9999999999', 'ADMIN', 'ACTIVE');
+(1, 'admin', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Super', 'Admin', '9999999999', 'ADMIN', 'ACTIVE');
 
 -- 2. Insert Customers
 INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone`, `role`, `status`) VALUES
-(2, 'john@gmail.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'John', 'Doe', '9876543210', 'CUSTOMER', 'ACTIVE'),
-(3, 'jane@gmail.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Jane', 'Smith', '9876543211', 'CUSTOMER', 'ACTIVE');
+(2, 'customer1', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'John', 'Doe', '9876543210', 'CUSTOMER', 'ACTIVE'),
+(3, 'customer2', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Jane', 'Smith', '9876543211', 'CUSTOMER', 'ACTIVE');
 
 INSERT INTO `customers` (`user_id`, `loyalty_points`) VALUES
 (2, 50),
@@ -210,16 +210,16 @@ INSERT INTO `addresses` (`id`, `customer_id`, `address_line1`, `address_line2`, 
 
 -- 4. Insert Restaurant Owners (10 total owners)
 INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone`, `role`, `status`) VALUES
-(4, 'owner.pizza@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Mario', 'Rossi', '9888877777', 'RESTAURANT_OWNER', 'ACTIVE'),
-(5, 'owner.burger@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Bob', 'Burger', '9888877776', 'RESTAURANT_OWNER', 'ACTIVE'),
-(6, 'owner.sushi@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Ken', 'Tanaka', '9888877775', 'RESTAURANT_OWNER', 'PENDING_APPROVAL'),
-(9, 'owner.chinese@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Li', 'Wei', '9888877774', 'RESTAURANT_OWNER', 'ACTIVE'),
-(10, 'owner.mexican@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Carlos', 'Garcia', '9888877773', 'RESTAURANT_OWNER', 'ACTIVE'),
-(11, 'owner.indian@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Rajesh', 'Kumar', '9888877772', 'RESTAURANT_OWNER', 'ACTIVE'),
-(12, 'owner.sub@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Sarah', 'Connor', '9888877771', 'RESTAURANT_OWNER', 'ACTIVE'),
-(13, 'owner.healthy@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Elena', 'Petrova', '9888877770', 'RESTAURANT_OWNER', 'ACTIVE'),
-(14, 'owner.dessert@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Sophie', 'Dubois', '9888877769', 'RESTAURANT_OWNER', 'ACTIVE'),
-(15, 'owner.chicken@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Colonel', 'Sanders', '9888877768', 'RESTAURANT_OWNER', 'ACTIVE');
+(4, 'owner1', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Mario', 'Rossi', '9888877777', 'RESTAURANT_OWNER', 'ACTIVE'),
+(5, 'owner2', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Bob', 'Burger', '9888877776', 'RESTAURANT_OWNER', 'ACTIVE'),
+(6, 'owner3', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Ken', 'Tanaka', '9888877775', 'RESTAURANT_OWNER', 'PENDING_APPROVAL'),
+(9, 'owner4', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Li', 'Wei', '9888877774', 'RESTAURANT_OWNER', 'ACTIVE'),
+(10, 'owner5', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Carlos', 'Garcia', '9888877773', 'RESTAURANT_OWNER', 'ACTIVE'),
+(11, 'owner6', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Rajesh', 'Kumar', '9888877772', 'RESTAURANT_OWNER', 'ACTIVE'),
+(12, 'owner7', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Sarah', 'Connor', '9888877771', 'RESTAURANT_OWNER', 'ACTIVE'),
+(13, 'owner8', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Elena', 'Petrova', '9888877770', 'RESTAURANT_OWNER', 'ACTIVE'),
+(14, 'owner9', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Sophie', 'Dubois', '9888877769', 'RESTAURANT_OWNER', 'ACTIVE'),
+(15, 'owner10', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Colonel', 'Sanders', '9888877768', 'RESTAURANT_OWNER', 'ACTIVE');
 
 -- Insert Restaurant outlets (Using high-quality Unsplash image URLs)
 INSERT INTO `restaurants` (`user_id`, `restaurant_name`, `logo_path`, `banner_path`, `cuisine_type`, `estimated_delivery_time`, `address`, `rating`) VALUES
@@ -236,8 +236,8 @@ INSERT INTO `restaurants` (`user_id`, `restaurant_name`, `logo_path`, `banner_pa
 
 -- 5. Insert Delivery Partners
 INSERT INTO `users` (`id`, `email`, `password`, `first_name`, `last_name`, `phone`, `role`, `status`) VALUES
-(7, 'rider.sam@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Sam', 'Rider', '9555555555', 'DELIVERY_PARTNER', 'ACTIVE'),
-(8, 'rider.alex@foodify.com', '$2a$10$eHP/RE2e6etp/4y0V.z5nOvHN6pVt8.tshbNI/CrMPqkzhG.pLmcy', 'Alex', 'Rider', '9555555556', 'DELIVERY_PARTNER', 'ACTIVE');
+(7, 'rider1', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Sam', 'Rider', '9555555555', 'DELIVERY_PARTNER', 'ACTIVE'),
+(8, 'rider2', '$2a$10$U/AuA1VXXgFsxp6YvmP2fOqdSvXvxBkMdm/s7fxFR6BMZHGrIMKZ6', 'Alex', 'Rider', '9555555556', 'DELIVERY_PARTNER', 'ACTIVE');
 
 INSERT INTO `delivery_partners` (`user_id`, `vehicle_number`, `license_number`, `is_available`, `rating`, `earnings`) VALUES
 (7, 'MH-01-AB-1234', 'DL-98765432101', 1, 4.8, 120.00),

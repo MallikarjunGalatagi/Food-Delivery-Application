@@ -9,19 +9,16 @@
         <p class="text-muted text-center mb-4">Log in to your Foodify account</p>
         
         <!-- Display alert messages -->
-        <c:set var="dispError" value="${not empty param.errorMsg ? param.errorMsg : errorMsg}" />
-        <c:set var="dispSuccess" value="${not empty param.successMsg ? param.successMsg : successMsg}" />
-        
-        <c:if test="${not empty dispError}">
+        <c:if test="${not empty errorMsg || not empty param.errorMsg}">
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="fa-solid fa-triangle-exclamation me-2"></i> ${dispError}
+                <i class="fa-solid fa-triangle-exclamation me-2"></i> ${not empty param.errorMsg ? param.errorMsg : errorMsg}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <c:remove var="errorMsg" scope="session" />
         </c:if>
-        <c:if test="${not empty dispSuccess}">
+        <c:if test="${not empty successMsg || not empty param.successMsg}">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fa-solid fa-circle-check me-2"></i> ${dispSuccess}
+                <i class="fa-solid fa-circle-check me-2"></i> ${not empty param.successMsg ? param.successMsg : successMsg}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <c:remove var="successMsg" scope="session" />
@@ -29,8 +26,8 @@
 
         <form action="${pageContext.request.contextPath}/auth/login" method="post">
             <div class="mb-3">
-                <label for="email" class="form-label font-weight-500">Email Address</label>
-                <input type="email" class="form-control form-control-custom" id="email" name="email" required placeholder="name@example.com">
+                <label for="email" class="form-label font-weight-500">Username / Email</label>
+                <input type="text" class="form-control form-control-custom" id="email" name="email" required placeholder="Enter username or email">
             </div>
             
             <div class="mb-3">
